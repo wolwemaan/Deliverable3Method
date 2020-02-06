@@ -35,17 +35,18 @@ namespace Deliverable3Method
             name = Console.ReadLine();
 
             // Define a regular expression for any numeric characters
-            Regex regExp = new Regex(@".*\d.*",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex regExp = new Regex(@".*[^A-Za-z\s]+.*", RegexOptions.Compiled);
+
+            // Use the regular expression to check for a match
             if (regExp.IsMatch(name))
             {
                 // Print a message with the result string
-                Console.WriteLine("Your input countain a numeric which is unexpected in a name, please try again");
+                Console.WriteLine("Your input contains unexpected name characters, please try again");
                 return;
             }
 
             // Print a message with the result string
-            Console.WriteLine("Welcome " + name);
+            Console.WriteLine("Hello " + name);
 
         }
     }
