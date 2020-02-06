@@ -35,9 +35,9 @@ namespace Deliverable3Method
             name = Console.ReadLine();
 
             // Define a regular expression for any numeric characters
-            Regex rx = new Regex(@".*\d.*",
+            Regex regExp = new Regex(@".*\d.*",
                 RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            if (rx.IsMatch(name))
+            if (regExp.IsMatch(name))
             {
                 // Print a message with the result string
                 Console.WriteLine("Your input countain a numeric which is unexpected in a name, please try again");
